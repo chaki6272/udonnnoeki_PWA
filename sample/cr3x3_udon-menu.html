@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>縦書きメニュー一覧</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background-color: #f4f4f4;
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+      display: flex;
+      justify-content: center;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+    }
+
+    .menu-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 450px;
+    }
+
+    .menu-image img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .menu-text {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      padding: 16px;
+      font-size: 14px;
+      line-height: 1.8;
+      flex: 1;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <!-- カード1 -->
+    <div class="menu-card">
+      <div class="menu-image">
+        <img src="https://via.placeholder.com/300x160.png?text=うどん1" alt="うどん1">
+      </div>
+      <div class="menu-text">
+        鬼おろし肉ぶっかけうどん<br>
+        夏の一番人気！<br>
+        焼きたて牛肉と鬼おろし
+      </div>
+    </div>
+
+    <!-- カード2 -->
+    <div class="menu-card">
+      <div class="menu-image">
+        <img src="https://via.placeholder.com/300x160.png?text=うどん2" alt="うどん2">
+      </div>
+      <div class="menu-text">
+        明太釜玉うどん<br>
+        旨みたっぷり明太子と<br>
+        卵のコクが絶妙
+      </div>
+    </div>
+
+    <!-- カード3 -->
+    <div class="menu-card">
+      <div class="menu-image">
+        <img src="https://via.placeholder.com/300x160.png?text=うどん3" alt="うどん3">
+      </div>
+      <div class="menu-text">
+        とろ玉うどん<br>
+        とろろと半熟玉子で<br>
+        のどごし爽やか
+      </div>
+    </div>
+
+    <!-- 以下、カード4〜9もコピー＆編集可能 -->
+    <div class="menu-card">
+      <div class="menu-image">
+        <img src="https://via.placeholder.com/300x160.png?text=うどん4" alt="うどん4">
+      </div>
+      <div class="menu-text">
+        カレーうどん<br>
+        スパイス香る<br>
+        熱々の一杯
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-image">
+        <img src="https://via.placeholder.com/300x160.png?text=うどん5" alt="うどん5">
+      </div>
+      <div class="menu-text">
+        ざるうどん<br>
+        シンプルで旨い！<br>
+        夏にぴったり
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-image">
+        <img src="https://via.placeholder.com/300x160.png?text=うどん6" alt="うどん6">
+      </div>
+      <div class="menu-text">
+        かき揚げうどん<br>
+        サクサク野菜の<br>
+        うまみが広がる
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-image">
+        <img src="https://via.placeholder.com/300x160.png?text=うどん7" alt="うどん7">
+      </div>
+      <div class="menu-text">
+        月見うどん<br>
+        卵のやさしい味わい<br>
+        心もほっこり
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-image">
+        <img src="https://via.placeholder.com/300x160.png?text=うどん8" alt="うどん8">
+      </div>
+      <div class="menu-text">
+        わかめうどん<br>
+        ヘルシーで<br>
+        食感も楽しい
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-image">
+        <img src="https://via.placeholder.com/300x160.png?text=うどん9" alt="うどん9">
+      </div>
+      <div class="menu-text">
+        鳥天ぶっかけ<br>
+        ジューシーな鳥天が<br>
+        食べ応え抜群
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

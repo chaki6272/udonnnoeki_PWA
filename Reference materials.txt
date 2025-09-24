@@ -1,0 +1,125 @@
+✅プロジェクトフォルダ（indx.htmlがあるフォルダ）に移動して:
+python -m http.server 8000
+その後ブラウザで:
+👉 http://localhost:8000/page_index.html にアクセスする。
+
+
+✅font-awesome
+https://fontawesome.com/icons
+
+・クラス名を確認する手順（画像付きサイト）
+1.上記URLを開く
+2.検索欄に「home」や「phone」などのキーワードを入力
+3.使いたいアイコンをクリック
+4.表示されるHTMLコードをコピーするだけ
+
+たとえば：
+html
+<i class="fas fa-home"></i>
+fas → Font Awesome Solid（塗りつぶし）
+fa-home → 「家」のアイコン
+
+・よく使うカテゴリとプレフィックス
+種類	説明	使用例
+fas  Solid（塗りつぶし）	<i class="fas fa-home">
+far	 Regular（アウトライン）	<i class="far fa-clock">
+fab	 Brands（ブランド系）	<i class="fab fa-twitter">
+
+
+
+✅ ファイル構成（確認用）
+
+/your-site-folder/
+├── bottom-nav.html
+├── style.css
+├── style-mobile.css
+├── index.html
+├── menu.html
+├── access.html
+└── ※ Font Awesome はCDNで読み込み済み
+
+
+✅ 表示確認フロー（React + Capacitor アプリ）
+
+---
+
+1．PCブラウザで表示確認（Vite開発サーバー）
+
+# Viteの開発サーバーを起動して、PCブラウザで表示を確認します
+npm run dev
+
+# ブラウザで http://localhost:5173/ を開く
+# ソースコードを保存すると自動でリロードされます（ホットリロード）
+
+---
+
+2．Android Studio 実機または仮想デバイスで表示確認
+
+# ① Reactアプリをビルド（www フォルダが生成される）
+npm run build
+
+# ② ビルドした成果物を Capacitor にコピー（同期）
+npx cap copy
+
+# ③ Android Studio を起動（Android プロジェクトを開く）
+npx cap open android
+
+# → Android Studio 上で：
+#    - AVD（仮想デバイス）または USB 実機を選択
+#    - ▶（再生ボタン）で起動・表示確認
+
+# ※ 反映されない場合は Build > Clean Project を試す
+
+---
+
+補足：
+
+# 初回のみ Android プラットフォームの追加が必要です
+npx cap add android
+
+# Android Studio を使わずに直接起動する場合：
+npx cap run android --target=device
+
+--------------
+簡易サーバー
+
+１．Python を使ったローカルサーバー手順
+1️⃣ Pythonがインストール済みか確認
+まず、Windowsの「コマンドプロンプト（cmd）」や「PowerShell」で以下を実行：
+
+python --version
+→ Python 3.x.x のように表示されればOKです。
+
+2️⃣ プロジェクトフォルダに移動
+例えば、あなたの menu_indx.html や menu.csv があるフォルダが
+G:\うどんの駅\webサイト_udonnoeki\ の場合、cmdから：
+
+cd "G:\うどんの駅\webサイト_udonnoeki"
+
+3️⃣ Pythonのローカルサーバーを起動
+以下を実行：
+
+python -m http.server 8000
+→ これで、http://localhost:8000 にアクセスできる状態になります。
+
+4️⃣ ブラウザからアクセス
+Chromeなどで：
+http://localhost:8000/menu_indx.html
+これで、JavaScript の fetch() による menu.csv の読み込みができるようになります 🎉
+
+💡 もし python の代わりに python3 が必要な場合
+環境によっては：
+python3 -m http.server 8000
+を使って試してください。
+
+
+２．VSCode拡張機能「Live Server」を使う
+VSCode の拡張機能「Live Server」をインストール
+
+HTML を右クリック → Open with Live Server
+
+自動で http://127.0.0.1:5500/menu_indx.html のようなURLで開いてくれる
+
+３． XAMPPやMAMPなどのサーバー環境を使う
+もし既にXAMPP/MAMPが入っている場合は、
+htdocs や www フォルダにプロジェクトを置いてブラウザからアクセス。

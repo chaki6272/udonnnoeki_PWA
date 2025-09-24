@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>うどんの駅です</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 共通ヘッダー・フッターを読み込むJS -->
+  <script src="include-common.js" defer></script>
+  <script src="scrollin/fadein.js"></script>
+
+
+    <!-- Google Fonts（楷書風代用） -->
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="slide/slideshow.css">
+  <link rel="stylesheet" href="style.unified.css">
+  <link rel="stylesheet" href="mv/gm_css.css">
+  <link rel="stylesheet" href="scrollin/fadein.css">
+
+
+  <link rel="manifest" href="/manifest.json">
+　<meta name="theme-color" content="#ff6600">
+
+</head>
+<body>
+ <!-- ▼ ヘッダー読込領域 -->
+  <div id="header-area"></div>
+
+ <!-- 動画読込領域 -->
+<div class="video-container">
+  <video src="mv/udonnoeki_GoogleEarth2.mp4"
+         autoplay 
+         muted 
+         
+         playsinline>
+  </video>
+</div>
+
+<!--
+ <div style="padding-top: 70px; display: flex; justify-content: center; align-items: center; height: calc(60vh - 70px);">
+  <video src="mv/udonnoeki_GoogleEarth.mp4" 
+       style="max-width: 60%; height: auto; display: block; margin: 0; padding: 0;" 
+       autoplay 
+       muted 
+       loop 
+       playsinline>
+</video>
+</div>
+-->
+
+<div style="min-height: 10vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<!--
+  <div style="text-align: left; max-width: 600px; padding: 10px;">
+    <img src="img/gaikan.jpg" alt="うどんの駅外観" style="max-width: 60%; height: auto; display: block; margin: 0 auto 10px auto;" class="fade-in-on-scroll.visible">
+    -->
+    <p>
+      自家製麺にこだわり、使用する水は富士山の湧水を使用。つゆは味噌、醤油から選べる。<br>
+      当店人気メニューの肉汁うどんは国産豚肉を贅沢に使用し、具だくさんで食べ応え十分。<br>
+      自家製麺の食感を堪能できる肉汁つけうどんも好評。牛すじをとろけるまで煮込んだカレーうどん、カレーライスもご用意しております。
+    </p>
+  </div>
+</div>
+
+
+<div style="text-align:center; font-size:20px">当店のおすすめ</div>
+
+<main>
+
+<div class="slideshow-wrapper">
+
+  <div class="slideshow-container" id="slideshow">
+<!--
+-->
+
+<!-- JSで画像が挿入 -->
+<!--
+-->
+  <div class="slideshow-slide" id="slide-track"></div>
+
+  <button class="nav prev">‹</button>
+  <button class="nav next">›</button>
+
+  <script src="slide/slideshow.js"></script>
+
+ </div>
+</div>
+
+</main>
+<!--
+-->
+
+  <!-- ▼ フッター読込領域 -->
+  <div id="footer-area"></div>
+
+  <!-- ▼ ボトムナビ読込領域 -->
+  <div id="bottom-nav-area"></div>
+
+  <!-- ▼ サイドパターン読込領域 -->
+<!--
+  <div id="side_pattern"></div>
+--> 
+</body>
+</body>
+</html>

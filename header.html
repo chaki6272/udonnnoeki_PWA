@@ -1,0 +1,29 @@
+<header>
+  <div class="header-inner">
+    <a href="index.html">
+      <img src="img/udon_logo.gif" alt="店舗ロゴ" width="200px">
+    </a>
+    <nav class="global-nav">
+      <a href="index.html">ホーム</a>
+      <a href="menu.html">メニュー</a>
+      <a href="access.html">アクセス</a>
+    </nav>
+  </div> 
+</header>
+
+<!-- ▼ サイドパターン読込領域 -->
+<div id="side_pattern"></div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function(registration) {
+        console.log('ServiceWorker登録成功:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('ServiceWorker登録失敗:', error);
+      });
+  });
+}
+</script>

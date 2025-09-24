@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>メニュー｜うどんの駅</title>
+
+  <!-- Google Fonts（楷書風代用） -->
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Kaisei Tokumin', serif;
+      background-color: #fff;
+    }
+
+    /* ===== ヘッダー ===== */
+    header {
+      text-align: center;
+      padding: 20px 0 10px;
+      border-bottom: 2px solid #ccc;
+    }
+
+    header img {
+      height: 80px;
+    }
+
+    nav.global-nav {
+      margin-top: 10px;
+    }
+
+    nav.global-nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav.global-nav a:hover {
+      color: #c00;
+    }
+
+    /* ===== メニュー内ナビゲーション ===== */
+    .menu-nav {
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #fdf6e3;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .menu-nav a {
+      margin: 0 8px;
+      font-size: 15px;
+      text-decoration: none;
+      color: #555;
+    }
+
+    .menu-nav a:hover {
+      color: #ff6600;
+    }
+
+    /* ===== メニューカードグリッド ===== */
+    .menu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    .menu-card {
+      width: 220px;
+      border: 2px solid #c28b1b;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+    }
+
+    .menu-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .menu-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .menu-text {
+      padding: 4px 8px;
+      font-size: 18px;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .menu-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .menu-price {
+      font-size: 16px;
+      color: #000;
+    }
+
+    .price-red {
+      color: #ff0000;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==== 共通ヘッダー ==== -->
+  <header>
+    <img src="img/udon_logo.gif" alt="店舗ロゴ"> <!-- ロゴ画像を差し替えてください -->
+    <nav class="global-nav">
+      <a href="greeting.html">挨拶</a>
+      <a href="menu.html">メニュー</a>
+      <a href="access.html">アクセス</a>
+    </nav>
+  </header>
+
+  <!-- ==== メニュー内サブナビ ==== -->
+  <nav class="menu-nav">
+    <a href="#recommend">おススメメニュー</a>
+    <a href="#udon">うどん</a>
+    <a href="#rice">ご飯物</a>
+    <a href="#topping">トッピング</a>
+    <a href="#other">その他</a>
+  </nav>
+
+  <!-- ==== メニューカテゴリ：おススメ ==== -->
+  <section id="recommend">
+    <h2 style="text-align:center;">おススメメニュー</h2>
+    <div class="menu-grid">
+ 
+	<!-- 1枚目 -->
+ <div class="menu-card">
+    <div class="menu-image">
+      <img src="img/L/kake_L.jpg" alt="かけ味噌">
+    </div>
+    <div class="menu-text">
+      <div class="menu-title">かけ味噌</div>
+      <div class="menu-price">
+        並盛 <span class="price-red">450</span>円　
+        大盛 <span class="price-red">580</span>円
+      </div>
+    </div>
+  </div>
+	<!--  -->
+	
+  <!-- 2枚目 -->
+  <div class="menu-card">
+    <div class="menu-image">
+      <img src="img/L/tuke_L.jpg" alt="つけ味噌">
+    </div>
+    <div class="menu-text">
+      <div class="menu-title">つけ味噌</div>
+      <div class="menu-price">
+        並盛 <span class="price-red">450</span>円　
+        大盛 <span class="price-red">580</span>円
+      </div>
+    </div>
+  </div>
+	<!--  -->
+
+	   <!-- 3枚目 -->
+  <div class="menu-card">
+    <div class="menu-image">
+      <img src="img/L/niku-kinpira_L.jpg" alt="肉きんかけ味噌">
+    </div>
+    <div class="menu-text">
+      <div class="menu-title">肉きんかけ味噌</div>
+      <div class="menu-price">
+        並盛 <span class="price-red">680</span>円　
+        大盛 <span class="price-red">810</span>円
+      </div>
+    </div>
+  </div>
+	<!--  -->
+	  
+	   <!-- 3枚目 -->
+  <div class="menu-card">
+    <div class="menu-image">
+      <img src="img/L/niku-kinpira_L.jpg" alt="肉きんつけ味噌">
+    </div>
+    <div class="menu-text">
+      <div class="menu-title">肉きんつけ味噌</div>
+      <div class="menu-price">
+        並盛 <span class="price-red">680</span>円　
+        大盛 <span class="price-red">810</span>円
+      </div>
+    </div>
+  </div>
+	<!--  -->
+	      <!-- 他のカードを追加 -->  
+	  
+    </div>
+  </section>
+
+  <!-- ==== 以下、カテゴリ（例：うどん） ==== -->
+  <section id="udon">
+    <h2 style="text-align:center;">うどん</h2>
+    <div class="menu-grid">
+      <!-- うどんカード群 -->
+    </div>
+  </section>
+
+  <section id="rice">
+    <h2 style="text-align:center;">ご飯物</h2>
+    <div class="menu-grid">
+      <!-- ご飯物カード群 -->
+    </div>
+  </section>
+
+  <section id="topping">
+    <h2 style="text-align:center;">トッピング</h2>
+    <div class="menu-grid">
+      <!-- トッピングカード群 -->
+    </div>
+  </section>
+
+  <section id="other">
+    <h2 style="text-align:center;">その他</h2>
+    <div class="menu-grid">
+      <!-- その他カード群 -->
+    </div>
+  </section>
+
+</body>
+</html>

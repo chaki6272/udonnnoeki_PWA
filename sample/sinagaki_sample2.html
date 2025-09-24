@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>かけ味噌メニュー</title>
+  <style>
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 中央起点 */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.menu-card {
+  width: 220px;
+  border: 2px solid #c28b1b;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+.menu-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+}
+.menu-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.menu-text {
+  padding: 4px 8px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.4;
+}
+.menu-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.menu-price {
+  font-size: 16px;
+  color: #000;
+}
+.price-red {
+  color: #ff0000;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 4px;
+}
+
+
+ </style>
+</head>
+<body>
+
+<div class="menu-grid">
+  <div class="menu-card">
+    <div class="menu-image">
+      <img src="img/L/kake_L.jpg" alt="かけ味噌">
+    </div>
+    <div class="menu-text">
+      <div class="menu-title">かけ味噌</div>
+      <div class="menu-price">
+        並盛 <span class="price-red">450</span>円　
+        大盛 <span class="price-red">580</span>円
+      </div>
+    </div>
+  </div>
+
+  <!-- 2枚目 -->
+  <div class="menu-card">
+    <div class="menu-image">
+      <img src="img/L/tuke_L.jpg" alt="つけ味噌">
+    </div>
+    <div class="menu-text">
+      <div class="menu-title">つけ味噌</div>
+      <div class="menu-price">
+        並盛 <span class="price-red">450</span>円　
+        大盛 <span class="price-red">580</span>円
+      </div>
+    </div>
+  </div>
+
+  <!-- 必要に応じてさらに追加 -->
+</div>
+
+
+</body>
+</html>

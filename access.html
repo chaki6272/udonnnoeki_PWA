@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>うどんの駅です</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 共通JS（ヘッダー・フッターの読み込み） -->
+  <script src="include-common.js" defer></script>
+
+  <!-- Google Fonts（楷書風代用） -->
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<!-- 新: 統合CSSを1つだけ -->
+<link rel="stylesheet" href="style.unified.css">
+
+
+</head>
+
+<body>
+  <!-- ▼ ヘッダー読込領域（include-common.js により挿入） -->
+  <div id="header-area"></div>
+
+  <main>
+    <div style="text-align: center; padding-top:50px;">
+      <h2>店舗所在地</h2>
+      <p>山梨県南都留郡西桂町小沼1112-1</p>
+
+      <h2>電話番号</h2>
+      <a href="tel:0555292040"><p>0555-29-2040</p></a>
+
+      <h2>アクセス方法</h2>
+      <ul>
+        <li>中央自動車道 富士吉田西桂スマートICより車で約1分</li>
+        <li>富士急行線 三つ峠駅より徒歩約12分</li>
+        <li>国道139号線沿い、「うどんの駅」看板が目印</li>
+      </ul>
+
+      <h2>地図</h2>
+      <div style="height: 400px; margin-bottom: auto;">
+        <iframe
+          title="地図"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3247.0977392657446!2d138.84918561275148!3d35.526582272523434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019678f07f54e9d%3A0x2a14b0a75772534d!2z44GG44Gp44KT44Gu6aeFIOilv-ahguW6lw!5e0!3m2!1sja!2sjp!4v1750311079112!5m2!1sja!2sjp"
+          width="100%"
+          height="100%"
+          style="border: 0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </main>
+
+  <!-- ▼ フッター読込領域 -->
+  <div id="footer-area"></div>
+
+  <!-- ▼ ボトムナビ読込領域 -->
+  <div id="bottom-nav-area"></div>
+
+     <!-- スクロール連動ヘッダー用JS -->
+<!--  <script src="header.js" defer></script> -->
+ 
+  <!-- ▼ サイドパターン読込領域 -->
+<!--  <div id="side_pattern"></div> -->
+ 
+</body>
+</html>

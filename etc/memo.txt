@@ -1,0 +1,147 @@
+mainタグのcssの件
+
+style.css
+
+/* ===========================
+   共通CSS（PC版 + モバイル共通）
+=========================== */
+
+body {
+  margin: 0;
+  padding-bottom: 60px;
+  font-family: 'Kaisei Tokumin', serif;
+  background-color: #fff;
+  font-size: 18px;
+}
+
+main {
+  padding-top: 210px; /* header + menu-nav 高さ分 */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main の　padding-top:210px　が無効にされているのは、どこが上書きをしてます？
+style.css 内には、これ以外記載はありませんが。
+-----------
+
+header のz-index　を止めて、.menu-nav に z-index:1000をつけた。
+.menu-nav がヘッダの上に張り付いた。スクロールで上に消えていく。
+
+.menu-nav については、position:fixed と表示位置（例えば、top:***px）をつけ、z-index を　header　の下位に置けば、.menu-nav のスクロールで消える件は解決か？
+---------------
+
+
+問題① .menu-nav が表示されない（中身は生成されているのに）
+結果
+開発者ツールで見ると、
+ページの最上部、ヘッダの裏にいます。display:flex は効いてる。
+
+【原因1】.menu-nav の表示位置が header の下に隠れている
+.menu-nav が header の子要素ではなく 別ブロックとして表示されている場合、
+重なり順（z-index）や位置関係で隠れることがあります。
+
+結果
+.menu-nav　には、z-indexは付いていない。
+
+【原因2】.menu-nav に visibility: hidden や opacity: 0 などが適用されている可能性
+CSSのミスで非表示になっていることも
+
+結果
+visibility: hidden や opacity: 0　もついていない。
+
+対応案は、1，2とも　未導入
+-------------
+
+-----
+① .menu-nav が表示されない（中身がない）
+
+状況
+中身はこのようにあるようですが、表示されない
+<!-- ここに共通メニュー -->
+<nav class="menu-nav" id="menu-nav"><a href="#cat-osusume">おススメ
+</a><a href="#cat-hiyasi">冷やしうどん
+</a><a href="#cat-miso">うどん　味噌出汁
+</a><a href="#cat-syoyu">うどん　醤油出汁
+</a><a href="#cat-gohan">ごはん類
+</a><a href="#cat-topping">トッピング</a></nav>
+----------
+header.js は header.html に含めず、各HTMLで読み込むようにしてください。
+
+状況
+元々、入っていない。</body>の上にある。
+ダウンロードファイルを全て導入。
+-------------
+.menu-card などに scroll-margin-top が未指定、または値が足りない
+
+状況
+設定済み
+.menu-card {
+  width: 180px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  scroll-margin-top: 210px; /* header + menu-nav 高さ */
+}
+-----------
+状況
+<section>タグへのCSSは無い
+---------
+
+
+結果
+メニューナビが表示されない。
+ヘッダが動かない。
+
+ページ遷移で上部が、ヘッダ後ろに隠れる
+
+
+menu.html にメニューの内容が表示されました。
+メニューリンクナビの内容は、表示されません。
+
+ヘッダもメニューナビの動きません。
+全ページでメニューナビは表示されます。
+access.htmlから　_menu.js へのlinkを外したら、
+header.js:1 Uncaught SyntaxError: Identifier 'prevScroll' has already been declared (at header.js:1:1)
+は消えました。
+
+
+結果
+方法A
+menu-nav消えず、ヘッダも固定されたまま
+header.js:1 Uncaught SyntaxError: Identifier 'prevScroll' has already been declared (at header.js:1:1)
+
+方法B
+
+
+現象１
+header.js を　読み込む全てのページで、menu-nav のスペースだけ表示される。
+
+
+推測1
+header.html 内で、.menu-navのエリアが確保されているので、header.htmlを読む全てのページにエリアだけ表示される
+
+現象２
+メニューの中身が表示されない。リンクもない。
+
+推測２
+①menu_cata.csvが読み込めていない。
+②_menu.jsのナビリンクが読めていない
+
+現象１から順に対処しましょう
+
+-----------
+全てのページにmenu-nav　が表示されるようになった。
+ヘッダと一緒に消える。
+
+メニューナビの高さは、確保できているが、文字が出ない。リンクも貼られていない。
+スペースだけで中身がない。開発者ツールで確認。
+
+メニューの内容が表示されなくなった。
+もしかして　menu_cata.csv が読み込めていない？
+
+
+
+header.html で_menu.jsを読んでないからでは？
+

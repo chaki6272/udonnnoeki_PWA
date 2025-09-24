@@ -1,0 +1,12 @@
+/* 初期状態：非表示 + 少し下げた位置 */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* 画面内に入ったらクラス追加されてふわっと表示 */
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

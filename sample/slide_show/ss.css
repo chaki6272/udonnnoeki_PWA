@@ -1,0 +1,92 @@
+/* -------------------------------
+   全体のレイアウト設定
+---------------------------------*/
+
+/* ページ全体（背景・余白なし・スクロール無効） */
+body {
+  margin: 0;
+  background: #000;           /* 背景を黒に */
+  overflow: hidden;           /* 画像が画面外に出てもスクロールしない */
+}
+
+/* スライドショー用の親コンテナ */
+#slideshow-container {
+  position: relative;         /* 子要素（画像）を絶対位置指定するため */
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 画像の共通スタイル */
+.slideshow-image {
+  position: absolute;         /* コンテナ内の任意の位置に表示 */
+  opacity: 0;                 /* 最初は透明 */
+  transition: all 1s ease-in-out; /* なめらかに変化させる */
+  pointer-events: none;       /* クリック無効化（下の要素がクリックできるように） */
+}
+
+/* -------------------------------
+   アニメーション定義
+---------------------------------*/
+
+/* フェードイン（透明→表示） */
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* ズームイン（縮小→拡大） */
+.zoom-in {
+  transform: scale(0.3); /* 初期状態で小さく表示 */
+  animation: zoomIn 1s ease-in-out forwards;
+}
+
+/* 回転イン（回転しながら表示） */
+.rotate-in {
+  transform: rotate(-180deg) scale(0.5); /* 初期状態：逆さ＋小さく */
+  animation: rotateIn 1s ease-in-out forwards;
+}
+
+/* -------------------------------
+   アニメーションの中身
+---------------------------------*/
+
+/* フェードインの動き */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ズームインの動き */
+@keyframes zoomIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 回転しながら表示の動き */
+@keyframes rotateIn {
+  to {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 停止ボタンのスタイル */
+#stop-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: crimson;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#stop-button:hover {
+  background: darkred;
+}

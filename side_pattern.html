@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>両サイドに紋様</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .side-pattern {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100px; /* 紋様の幅 */
+/*      background-image: url('img/BG_image-26638580.jpg'); *//* 紋様の画像パス */
+/*      background-image: url('img/BG_image-26656661.jpg'); /* 紋様の画像パス */
+/*      background-image: url('img/BG_image-26638580_2.jpg'); *//* 紋様の画像パス */
+      background-image: url('img/BG_image-26656661_2.jpg'); /* 紋様の画像パス */
+      background-repeat: repeat-y;
+      background-size: contain;
+      z-index: -1; /* 背景に配置 */
+    }
+
+    .left-pattern {
+      left: 0;
+    }
+
+    .right-pattern {
+      right: 0;
+    }
+
+    .content {
+      margin: 0 100px; /* 両側の紋様分のスペースを確保 */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="side-pattern left-pattern"></div>
+  <div class="side-pattern right-pattern"></div>
+
+  <div class="content">
+    <h1>ページの中央コンテンツ</h1>
+    <p>ここに本文などが表示されます。</p>
+    <img src="img/gaikan_ukiyoe_2.jpg" width="200px">
+  </div>
+</body>
+</html>

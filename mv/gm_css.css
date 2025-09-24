@@ -1,0 +1,27 @@
+/* 共通設定：動画表示ブロック */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  /*height: calc(60vh - 70px);*/
+  box-sizing: border-box;
+}
+
+/* 動画要素のスタイル */
+.video-container video {
+  max-width: 50%;
+  height: auto;
+  display: block;
+}
+
+/* スマートフォン（幅600px以下）向け調整 */
+@media screen and (max-width: 600px) {
+  .video-container {
+    padding-top: 40px;
+    height: calc(60vh - 40px);
+  }
+  .video-container video {
+    max-width: 90%;
+  }
+}

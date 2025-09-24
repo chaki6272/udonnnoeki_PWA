@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>メニューカテゴリー一覧</title>
+  <link rel="stylesheet" href="style.unified.css">
+
+  <script src="include-common.js" defer></script>
+  <script src="menu_pick.js" defer></script>
+
+
+  <style>
+    #category-container {
+      max-width: 1000px;
+      margin: 100px auto 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    #category-container a {
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      display: block;
+      width: 200px;
+    }
+    #category-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    #category-container p {
+      margin-top: 8px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header-area">
+  </header>
+
+  <main>
+
+        <h1 style="text-align:center; margin-top: 20px;">カテゴリ一覧</h1>
+
+    <div id="category-container">
+      <!-- カテゴリ画像がここに動的に挿入されます -->
+    </div>
+  </main>
+
+  <script src="menu_index_loader.js"></script>
+</body>
+</html>

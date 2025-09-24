@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>かけ味噌メニュー</title>
+  <style>
+    body {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+      font-family: sans-serif;
+    }
+
+    .menu {
+      border: 2px solid #c28b1b;
+      border-radius: 4px; /* 2mm ≒ 4px */
+      padding: 20px;
+      width: 500px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+      color: #000;
+      font-family: "DF相撲体W12", sans-serif; /* DFフォントはWeb未対応のため代替 */
+      margin-bottom: 20px;
+    }
+
+    .content {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-image {
+      width: 45%;
+    }
+
+    .menu-image img {
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    .menu-price {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .item-label {
+      font-family: "TT-JTCウインR4P", sans-serif;
+      color: #000;
+      margin-right: 8px;
+      text-align: right;
+    }
+
+    .item-price {
+      font-size: 40px;
+      font-family: "TT-JTCナミキPOP-U", sans-serif;
+      color: #ff0000;
+      margin-right: 4px;
+    }
+
+    .yen {
+      font-family: "TT-JTCウインR4P", sans-serif;
+      color: #000;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu">
+    <div class="title">かけ味噌</div>
+    <div class="content">
+      <div class="menu-image">
+        <img src="c4e38874-14f2-4afb-a286-511e0f8c21c8.png" alt="うどん写真">
+      </div>
+      <div class="menu-price">
+        <div class="item">
+          <div class="item-label">並盛</div>
+          <div class="item-price">450</div>
+          <div class="yen">円</div>
+        </div>
+        <div class="item">
+          <div class="item-label" style="color: #c00;">大盛</div>
+          <div class="item-price">580</div>
+          <div class="yen">円</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
