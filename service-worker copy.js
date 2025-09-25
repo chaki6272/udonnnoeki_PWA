@@ -1,17 +1,17 @@
-const CACHE_NAME = 'udon-no-eki-cache-v2';
+const CACHE_NAME = 'udon-no-eki-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
   '/menu.html',
   '/access.html',
   '/memberscard.html',
-  '/include-common.js',
-  '/scrollin/fadein.js',
-  '/slide/slideshow.css',
-  '/style.unified.css',
-  '/mv/gm_css.css',
-  '/scrollin/fadein.css',
-  '/mv/udonnoeki_GoogleEarth2.mp4'
+'/include-common.js',
+'/scrollin/fadein.js',
+'/slide/slideshow.css',
+'/style.unified.css',
+'/mv/gm_css.css',
+'/scrollin/fadein.css',
+'/mv/udonnoeki_GoogleEarth2.mp4'
 ];
 
 // インストール時にキャッシュ
@@ -23,23 +23,13 @@ self.addEventListener('install', event => {
         return cache.addAll(urlsToCache);
       })
   );
-  // 開発中は即座に新しいSWを有効化
-  self.skipWaiting();
 });
 
-// リクエスト時にネットワーク優先で返す
+// リクエスト時にキャッシュから返す
 self.addEventListener('fetch', event => {
   event.respondWith(
-    fetch(event.request)
-      .then(response => {
-        // 新しいレスポンスをキャッシュに保存
-        const responseClone = response.clone();
-        caches.open(CACHE_NAME).then(cache => {
-          cache.put(event.request, responseClone);
-        });
-        return response;
-      })
-      .catch(() => caches.match(event.request)) // オフライン時のみキャッシュ
+    caches.match(event.request)
+      .then(response => response || fetch(event.request))
   );
 });
 

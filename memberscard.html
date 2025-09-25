@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>うどんの駅です</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 共通JS（ヘッダー・フッターの読み込み） -->
+  <script src="include-common.js" defer></script>
+
+  <!-- Google Fonts（楷書風代用） -->
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<!-- 新: 統合CSSを1つだけ -->
+<link rel="stylesheet" href="style.unified.css">
+
+
+</head>
+
+<body>
+  <!-- ▼ ヘッダー読込領域（include-common.js により挿入） -->
+  <div id="header-area"></div>
+
+<main>
+
+<div>
+  <h2>メンバーズカード</h2>
+  <p>会員番号: <span id="member-id"></span></p>
+  <div id="qrcode"></div>
+
+  <p>スタンプ数: <span id="stamp-count">0</span></p>
+  <button onclick="addStamp()">スタンプ追加</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script>
+  // 会員番号（端末ごとに生成）
+  let memberId = localStorage.getItem("memberId");
+  if (!memberId) {
+    // UUID生成（crypto.randomUUID が使えない場合は Date.now() で代替）
+    memberId = "ID-" + (crypto.randomUUID ? crypto.randomUUID() : Date.now());
+    localStorage.setItem("memberId", memberId);
+  }
+  document.getElementById("member-id").textContent = memberId;
+
+  // QRコード表示
+  const qrcodeContainer = document.getElementById("qrcode");
+  if (typeof QRCode !== "undefined" && qrcodeContainer) {
+    try {
+      QRCode.toDataURL(memberId, { width: 128, margin: 2 }, function (err, url) {
+        if (err) {
+          console.error("QR生成エラー:", err);
+          qrcodeContainer.textContent = "[QR生成失敗]";
+        } else {
+          const img = document.createElement("img");
+          img.src = url;
+          img.alt = "会員QRコード";
+          qrcodeContainer.innerHTML = ""; // 既存の内容クリア
+          qrcodeContainer.appendChild(img);
+        }
+      });
+    } catch (e) {
+      console.error("QR生成例外:", e);
+      qrcodeContainer.textContent = "[QR生成例外]";
+    }
+  } else if (qrcodeContainer) {
+    qrcodeContainer.textContent = "[QRCodeライブラリ未読み込み]";
+  }
+
+  // スタンプ数
+  let count = localStorage.getItem("stampCount") || 0;
+  document.getElementById("stamp-count").textContent = count;
+
+  function addStamp() {
+    count++;
+    localStorage.setItem("stampCount", count);
+    document.getElementById("stamp-count").textContent = count;
+  }
+</script>
+
+</main>
+
+  <!-- ▼ フッター読込領域 -->
+  <div id="footer-area"></div>
+
+  <!-- ▼ ボトムナビ読込領域 -->
+  <div id="bottom-nav-area"></div>
+
+     <!-- スクロール連動ヘッダー用JS -->
+<!--  <script src="header.js" defer></script> -->
+ 
+  <!-- ▼ サイドパターン読込領域 -->
+<!--  <div id="side_pattern"></div> -->
+ 
+</body>
+</html>
